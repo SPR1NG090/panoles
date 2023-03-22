@@ -13,7 +13,7 @@ infospot2.addHoverElement( document.getElementById( 'infospot-1' ), 100 );
 
 // panolens select container
 const pan = document.querySelector('.pan');
-const img = './img/img1_panorama.jpg';
+const img = './img/img2_panorama.jpeg';
 const panorama = new PANOLENS.ImagePanorama(img);
 const viewer = new PANOLENS.Viewer({
     container: pan,
