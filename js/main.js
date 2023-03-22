@@ -3,8 +3,8 @@
 var infospot, infospot2;
 
 infospot = new PANOLENS.Infospot();
-infospot.position.set( 5000.00, -665.23, -3996.49 );
-infospot.addHoverText( 'turkse pizza' );
+infospot.position.set( 5000, 400, -400);
+infospot.addHoverText( 'Tim zijn prachtige voorhoofd' );
 
 infospot2 = new PANOLENS.Infospot( 300, PANOLENS.DataImage.Info );
 infospot2.position.set( -5000.00, -1825.25, 197.56 );
