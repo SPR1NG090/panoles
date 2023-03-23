@@ -22,6 +22,15 @@ body{
     bottom: 0;
 }
 
+.progressBar {
+    max-width: 500px;
+    margin: auto;
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+    background-color: white;
+    text-align: center;
+}
+
 h1{
     font-size: 2rem;
     margin-top: 1.5rem;
@@ -29,7 +38,13 @@ h1{
     text-align: center;
 }
 .vr-button{
-    margin-top: 1rem;
+    padding: 10px;
+    border-radius: 100%;
+    background-color: #45bccb;
+    color: white;
+    position: fixed;
+    left: 5%;
+    top: 5%;
     font-size: 1rem;
     border: none;
 }
@@ -37,8 +52,17 @@ h1{
     cursor: pointer;
 }
 
-#infospot{
+.infospot{
+    border-radius: black;
+    background-color: white;
+    max-width: 300px;
+    color: black;
+    padding: 15px;
+    overflow: hidden;
+}
     
+.infospot .title {
+    color: black;
 }
 
 .title{
