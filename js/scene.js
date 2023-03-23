@@ -16,8 +16,8 @@ infospot2.addHoverElement( document.getElementById( 'infospot-1' ), 100 );
 
 //init externat constances
 const pan = document.querySelector('.pan');
-const img = './img/img2_panorama.jpeg';
-const img2 = './img/img1_panorama.jpg';
+const img = './img/img8_panorama.jpg';
+const img2 = './img/img7_panorama.jpg';
 
 //init panorama + viewer
 const panorama = new PANOLENS.ImagePanorama(img);
@@ -27,8 +27,8 @@ const viewer = new PANOLENS.Viewer({
 })
 
 //linking between panorama's
-panorama.link( panorama2, new THREE.Vector3( 807.50, 604.88, 5000.00 ), 500, "./img/img1.png");
-panorama2.link( panorama, new THREE.Vector3( -807.50, 604.88, -5000.00 ), 300, );
+panorama.link( panorama2, new THREE.Vector3( -807.50, 404.88, 5000.00 ), 900, );
+panorama2.link( panorama, new THREE.Vector3( -807.50, 404.88, -5000.00 ), 300, );
 
 var vrtoggled = false;
 
