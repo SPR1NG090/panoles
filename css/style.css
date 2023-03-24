@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+
+.topBar,
+.bottomBar {
+    position: fixed;
+    width: 100%;
+    display: block;
+}
+
+.topbar {
+    top: 0;
+}
+
+.bottomBar {
+    bottom: 0;
+}
+
+.progressBar {
+    max-width: 500px;
+    margin: auto;
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+    background-color: white;
+    text-align: center;
+}
+
+/* h1 {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    color: orange;
+    text-align: center;
+} */
+
+/* .vr-button {
+    padding: 10px;
+    border-radius: 100%;
+    background-color: #45bccb;
+    color: white;
+    position: fixed;
+    left: 5%;
+    top: 5%;
+    font-size: 1rem;
+    border: none;
+}
+.vr-button:hover {
+    cursor: pointer;
+} */
+
+.infospot {
+    border-radius: black;
+    background-color: white;
+    max-width: 300px;
+    color: black;
+    padding: 15px;
+    overflow: hidden;
+}
+
+.infospot .title {
+    color: black;
+}
+
+.title {
+    font-size: 2rem;
+    color: white;
+}
+
+.text {
+    font-size: 1rem;
+    color: white;
+}
+
+/* panorama */
+/* .pan{
+    width: 100vw;
+    height: 100vh;
+} */
+
+:root {
+    --header-min-height: 5vh;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: var(--header-min-height);
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.header__title {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2rem;
+    color: #ffa500;
+    padding: 1rem;
+    flex-basis: 75%;
+}
+
+.vr-button {
+    border: none;
+    padding: 1rem;
+    border-radius: 100%;
+    background-color: #45bccb;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.vr-button:hover {
+    cursor: pointer;
+}
+
+.pan {
+    width: 100vw;
+    height: 100vh;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    padding-bottom: 0.75rem;
+}
+
+.footer__container {
+    max-width: 36rem;
+    margin: 0 auto;
+}
+
+.progress {
+    border: 0.2rem solid #fff;
+    border-radius: 1rem;
+    padding: 0.25rem;
+    height: 2rem;
+}
+
+.progress__bar {
+    background-color: #45bccb;
+    border-radius: 1rem;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    height: 100%;
+}

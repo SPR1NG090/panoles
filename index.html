@@ -1,37 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Panoles test</title>
-</head>
-<body>
-    
-    <div id="infospot-1" style="display:none" class="infospot">
-        <h3 class="title">Tims shoarma tent</h3>
-        <p>sjngfjeinghsbeohbwoefbvyubwfvbwefbvyuhbswfhbvoshbdofvbsobfvuowbeofvbousbcovubsuvb</p>
-        <p>dit is een test</p>
-    </div>
-    <section class="pan">
-        <div class="topBar">
-            <div class="topBarContainer">
-            <h1>Beroepsorientatie 360</h1>
-            <button class="vr-button" onclick="vrtoggle()">VR</button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Panoles test</title>
+    </head>
+    <body>
+        <div id="infospot-1" style="display: none" class="infospot">
+            <h3 class="title">Tims shoarma tent</h3>
+            <p>sjngfjeinghsbeohbwoefbvyubwfvbwefbvyuhbswfhbvoshbdofvbsobfvuowbeofvbousbcovubsuvb</p>
+            <p>dit is een test</p>
         </div>
-        </div>
-        <div class ="bottomBar">
-            <h1>dit is de footer</h1>
-            <div class = "progressBar">
-                <h2 id="place">dit is een stukje tekst</h2>
+        <!-- <section class="pan">
+            <div class="topBar">
+                <div class="topBarContainer">
+                    <h1>Beroepsorientatie 360</h1>
+                    <button class="vr-button" onclick="vrtoggle()">VR</button>
+                </div>
             </div>
-        </div> 
-    </section>
+            <div class="bottomBar">
+                <h1>dit is de footer</h1>
+                <div class="progressBar">
+                    <h2 id="place">dit is een stukje tekst</h2>
+                </div>
+            </div>
+        </section> -->
 
-    <script src="js/three.min.js"></script>
-    <script src="js/panolens.min.js"></script>
-    <script src="js/scene.js"></script>
-    <script src="js/main.js"></script>
-</body>
+        <header class="header">
+            <div class="header__container">
+                <h1 class="header__title">Beroepsorientatie 360</h1>
+                <button id="vr-button" class="vr-button">VR</button>
+            </div>
+        </header>
+
+        <main class="pan"></main>
+
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="progress">
+                    <div id="progress--bar" class="progress__bar"></div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/three.min.js"></script>
+        <script src="js/panolens.min.js"></script>
+        <script src="js/scene.js"></script>
+        <script src="js/main.js"></script>
+    </body>
 </html>
