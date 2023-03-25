@@ -12,6 +12,8 @@ infospot2.position.set( -5000.00, -1825.25, 197.56 );
 infospot2.addHoverElement( document.getElementById( 'infospot-1' ), 100 );
 
 var place = document.getElementById('place');
+const information = ["dit is buiten voor de hoofdingang", "dit is waar je binnenkomt via de hoofdingang, Links zit de kantine", "Hier zit het Café waar je wat drinken kan bestellen", "Dit is de grote hal van de nieuwbouw", "dit is een studieruimte", "hier zitten de lokalen van de opleiding informatica"]
+const locationInfo = document.getElementById("informatie");
 //panolens select container
 
 //init externat constances
@@ -95,9 +97,10 @@ this.setInterval(() => {
     for (let index = 0; index < viewer.scene.children.length; index++) {
         if (viewer.scene.children[index].active === true) {
             place.innerHTML = viewer.scene.children[index].name;
+            locationInfo.innerHTML = information[index];
             // console.log (viewer.scene.children[index].name);
         }
     }
-}, 2000);
+}, 1000);
  
 

@@ -48,6 +48,10 @@ body{
 }
 
 .progressBar {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 500px;
     margin: auto;
     padding: 15px;
@@ -100,6 +104,68 @@ h1{
     color: white;
 }
 
+.menu, .locatieInformatie {
+    position: relative;
+    display: block;
+    float: right;
+    margin-right: 20px;
+}
+
+.locatieInformatie {
+    margin-left: 25px;
+    margin-right: 0;
+}
+
+.menuBtn, .infoBtn{
+    background-color: #45bccb;
+    color: white;
+    padding: 15px;
+    border-radius: 100%;
+    border: none;
+}
+
+.infoBtn {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.menuImg{
+    display: block;
+    max-width: 20px;
+    height: 20px;
+    
+}
+
+.menuContent {
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    list-style: none;
+    margin-top: 12px;
+}
+
+.informatie {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 9px 11px 20px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    padding: 10px;
+    width: 200px;
+    bottom: 120%;
+}
+
+.menuBtn:hover {
+    background-color: white;
+}
+
+.menu:hover .menuContent, .locatieInformatie:hover .informatie{
+    display: block;
+}
 
 /* panorama */
 .pan{
