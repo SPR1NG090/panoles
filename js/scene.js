@@ -1,3 +1,6 @@
+const achievementOne = document.getElementById('achievement--1');
+const achievementTwo = document.getElementById('achievement--2');
+
 const myInfoSpot1 = document.getElementById('infospot--1');
 
 const infoSpot1 = new PANOLENS.Infospot();
@@ -61,32 +64,42 @@ vrbutton.addEventListener('click', vrtoggle);
 
 panorama.addEventListener('click', () => {
     const date = new Date();
-    console.log(`[${date.toLocaleString()}]: click event`);
+    console.log(`[${date.toLocaleString()}]: click event panorama 1`);
+    visitedPanoramas.push('panorama 1');
 });
 
 panorama2.addEventListener('click', () => {
     const date = new Date();
-    console.log(`[${date.toLocaleString()}]: click event`);
+    console.log(`[${date.toLocaleString()}]: click event panorama 2`);
+    visitedPanoramas.push('panorama 2');
 });
 
 panorama3.addEventListener('click', () => {
     const date = new Date();
-    console.log(`[${date.toLocaleString()}]: click event`);
+    console.log(`[${date.toLocaleString()}]: click event panorama 3`);
+    achievementTwo.classList.add('achievements__achievement--unlocked');
+    visitedPanoramas.push('panorama 3');
+    if (visitedPanoramas.includes('panorama 3')) {
+        return;
+    }
 });
 
 panorama4.addEventListener('click', () => {
     const date = new Date();
-    console.log(`[${date.toLocaleString()}]: click event`);
+    console.log(`[${date.toLocaleString()}]: click event panorama 4`);
+    visitedPanoramas.push('panorama 4');
 });
 
 panorama5.addEventListener('click', () => {
     const date = new Date();
-    console.log(`[${date.toLocaleString()}]: click event`);
+    console.log(`[${date.toLocaleString()}]: click event panorama 5`);
+    visitedPanoramas.push('panorama 5');
 });
 
 panorama6.addEventListener('click', () => {
     const date = new Date();
-    console.log(`[${date.toLocaleString()}]: click event`);
+    console.log(`[${date.toLocaleString()}]: click even panorama 6`);
+    visitedPanoramas.push('panorama 6');
 });
 
 panorama.add(infoSpot1);

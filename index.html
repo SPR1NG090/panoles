@@ -11,7 +11,12 @@
         <header class="header">
             <div class="header__container">
                 <h1 class="header__title">Beroepsorientatie 360</h1>
-                <button id="vr-button" class="vr-button">VR</button>
+                <div class="header__buttons">
+                    <button id="vr-button" class="button">VR</button>
+                    <button class="button" id="achievement--button">
+                        <img src="img/achievement_icon.svg" alt="" />
+                    </button>
+                </div>
             </div>
         </header>
 
@@ -22,6 +27,21 @@
                 opleiding. Dit wordt gedaan met het gebruik van 360° camera- en videobeelden.
             </p>
         </article>
+
+        <section class="achievements" id="achievements">
+            <h2 class="achievements__title">Prestaties</h2>
+            <p class="achievements__text">Hieronder staat een lijst met prestaties.</p>
+            <ul class="achievements__list">
+                <li class="achievements__achievement" id="achievement--1">
+                    <h3 class="achievements__achievement__title">Prestatie 1</h3>
+                    <p class="achievements__achievement__text">Voltooi de experience.</p>
+                </li>
+                <li class="achievements__achievement" id="achievement--2">
+                    <h3 class="achievements__achievement__title">Prestatie 2</h3>
+                    <p class="achievements__achievement__text">Bezoek de kantine.</p>
+                </li>
+            </ul>
+        </section>
 
         <main class="pan"></main>
 

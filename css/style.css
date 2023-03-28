@@ -105,6 +105,12 @@ body {
     flex-direction: row-reverse;
 }
 
+.header__buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .header__title {
     display: flex;
     justify-content: flex-end;
@@ -114,7 +120,7 @@ body {
     flex-basis: 75%;
 }
 
-.vr-button {
+.button {
     border: none;
     padding: 1rem;
     border-radius: 100%;
@@ -123,7 +129,7 @@ body {
     font-size: 1rem;
 }
 
-.vr-button:hover {
+.button:hover {
     cursor: pointer;
 }
 
@@ -174,4 +180,60 @@ body {
 
 .infospot__content {
     color: #45bccb;
+}
+
+/* Achievements Styling Rules */
+.achievements {
+    opacity: 0;
+    display: block;
+    width: 36rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: var(--subtle-shadow);
+    transition: opacity 0.2s ease-in-out;
+}
+
+.achievements--open {
+    opacity: 1;
+}
+
+.achievements__title {
+    margin-bottom: 0.25rem;
+}
+
+.achievements__list {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.achievements__achievement {
+    border: 0.1rem solid #45bccb;
+    padding: 0.5rem;
+}
+
+.achievements__achievement--unlocked {
+    background-color: #45bccb;
+}
+
+.achievements__achievement__title {
+    margin-bottom: 0.25rem;
+}
+
+.achievements__achievement__text {
+    font-style: italic;
+}
+
+.achievements__achievement__text::before {
+    content: open-quote;
+}
+
+.achievements__achievement__text::after {
+    content: close-quote;
 }
