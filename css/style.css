@@ -195,10 +195,12 @@ body {
     background-color: #fff;
     box-shadow: var(--subtle-shadow);
     transition: opacity 0.2s ease-in-out;
+    user-select: none;
 }
 
 .achievements--open {
     opacity: 1;
+    user-select: all;
 }
 
 .achievements__title {

@@ -99,6 +99,12 @@ panorama6.addEventListener('click', () => {
     const date = new Date();
     console.log(`[${date.toLocaleString()}]: click even panorama 6`);
     visitedPanoramas.push('panorama 6');
+
+    visitedPanoramas.every((visitedPanorama) => {
+        if (panoramas.indexOf(visitedPanorama, -1)) {
+            achievementOne.classList.add('achievements__achievement--unlocked');
+        }
+    });
 });
 
 panorama.add(infoSpot1);
