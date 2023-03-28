@@ -62,6 +62,8 @@ function vrtoggle() {
 
 vrbutton.addEventListener('click', vrtoggle);
 
+const visitedPanoramas = [];
+
 panorama.addEventListener('click', () => {
     const date = new Date();
     console.log(`[${date.toLocaleString()}]: click event panorama 1`);
@@ -79,9 +81,6 @@ panorama3.addEventListener('click', () => {
     console.log(`[${date.toLocaleString()}]: click event panorama 3`);
     achievementTwo.classList.add('achievements__achievement--unlocked');
     visitedPanoramas.push('panorama 3');
-    if (visitedPanoramas.includes('panorama 3')) {
-        return;
-    }
 });
 
 panorama4.addEventListener('click', () => {
