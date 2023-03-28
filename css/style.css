@@ -239,3 +239,25 @@ body {
 .achievements__achievement__text::after {
     content: close-quote;
 }
+
+/* Achievement Pop-up Rules */
+.achievement {
+    display: block;
+    width: 36rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%);
+    background-color: #fff;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.achievement--unlocked {
+    transform: translateX(-50%) translateY(0);
+}
+
+.achievement__title {
+    text-align: center;
+    padding: 1rem 0;
+}

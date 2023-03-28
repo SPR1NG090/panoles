@@ -1,5 +1,7 @@
 const achievementOne = document.getElementById('achievement--1');
 const achievementTwo = document.getElementById('achievement--2');
+const unlockedAchievement = document.getElementById('unlocked--achievement');
+const unlockedAchievementTitle = document.getElementById('unlocked--achievement--title');
 
 const myInfoSpot1 = document.getElementById('infospot--1');
 
@@ -62,6 +64,14 @@ function vrtoggle() {
 
 vrbutton.addEventListener('click', vrtoggle);
 
+const panoramas = [
+    'panorama 1',
+    'panorama 2',
+    'panorama 3',
+    'panorama 4',
+    'panorama 5',
+    'panorama 6',
+];
 const visitedPanoramas = [];
 
 panorama.addEventListener('click', () => {
@@ -79,6 +89,13 @@ panorama2.addEventListener('click', () => {
 panorama3.addEventListener('click', () => {
     const date = new Date();
     console.log(`[${date.toLocaleString()}]: click event panorama 3`);
+
+    unlockedAchievementTitle.textContent = 'Prestatie 2 ontgrendeld!';
+    unlockedAchievement.classList.add('achievement--unlocked');
+    setTimeout(() => {
+        unlockedAchievement.classList.remove('achievement--unlocked');
+    }, 3000);
+
     achievementTwo.classList.add('achievements__achievement--unlocked');
     visitedPanoramas.push('panorama 3');
 });
@@ -102,6 +119,12 @@ panorama6.addEventListener('click', () => {
 
     visitedPanoramas.every((visitedPanorama) => {
         if (panoramas.indexOf(visitedPanorama, -1)) {
+            unlockedAchievementTitle.textContent = 'Prestatie 1 ontgrendeld!';
+            unlockedAchievement.classList.add('achievement--unlocked');
+            setTimeout(() => {
+                unlockedAchievement.classList.remove('achievement--unlocked');
+            }, 3000);
+
             achievementOne.classList.add('achievements__achievement--unlocked');
         }
     });
