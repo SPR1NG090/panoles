@@ -1,14 +1,4 @@
-//infospots
-var infospot, infospot2;
 const vrbutton = document.getElementById('vr-button');
-
-infospot = new PANOLENS.Infospot();
-infospot.position.set(300, 450, -450);
-infospot.addHoverText('Tim zijn prachtige voorhoofd');
-
-infospot2 = new PANOLENS.Infospot(300, PANOLENS.DataImage.Info);
-infospot2.position.set(-5000.0, -1825.25, 197.56);
-infospot2.addHoverElement(document.getElementById('infospot-1'), 100);
 
 var place = document.getElementById('place');
 //panolens select container
@@ -63,9 +53,37 @@ function vrtoggle() {
 
 vrbutton.addEventListener('click', vrtoggle);
 
+panorama.addEventListener('click', () => {
+    const date = new Date();
+    console.log(`[${date.toLocaleString()}]: click event`);
+});
+
+panorama2.addEventListener('click', () => {
+    const date = new Date();
+    console.log(`[${date.toLocaleString()}]: click event`);
+});
+
+panorama3.addEventListener('click', () => {
+    const date = new Date();
+    console.log(`[${date.toLocaleString()}]: click event`);
+});
+
+panorama4.addEventListener('click', () => {
+    const date = new Date();
+    console.log(`[${date.toLocaleString()}]: click event`);
+});
+
+panorama5.addEventListener('click', () => {
+    const date = new Date();
+    console.log(`[${date.toLocaleString()}]: click event`);
+});
+
+panorama6.addEventListener('click', () => {
+    const date = new Date();
+    console.log(`[${date.toLocaleString()}]: click event`);
+});
+
 //adding to objects
 viewer.add(panorama, panorama2, panorama3, panorama4, panorama5, panorama6);
-panorama.add(infospot);
-panorama.add(infospot2);
 
 console.log(viewer);
