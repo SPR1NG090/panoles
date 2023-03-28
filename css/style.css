@@ -85,6 +85,7 @@ body {
 
 :root {
     --header-min-height: 5vh;
+    --subtle-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .header {
@@ -158,4 +159,19 @@ body {
     text-align: center;
     transition: all 0.2s ease-in-out;
     height: 100%;
+}
+
+/* Infospot Styling Rules */
+.infospot {
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: var(--subtle-shadow);
+}
+
+.infospot__title {
+    color: #ffa500;
+}
+
+.infospot__content {
+    color: #45bccb;
 }

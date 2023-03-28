@@ -1,3 +1,9 @@
+const myInfoSpot1 = document.getElementById('infospot--1');
+
+const infoSpot1 = new PANOLENS.Infospot();
+infoSpot1.position.set(0, 0, -2500);
+infoSpot1.addHoverElement(myInfoSpot1, 150);
+
 const vrbutton = document.getElementById('vr-button');
 
 var place = document.getElementById('place');
@@ -82,6 +88,8 @@ panorama6.addEventListener('click', () => {
     const date = new Date();
     console.log(`[${date.toLocaleString()}]: click event`);
 });
+
+panorama.add(infoSpot1);
 
 //adding to objects
 viewer.add(panorama, panorama2, panorama3, panorama4, panorama5, panorama6);
