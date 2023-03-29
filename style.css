@@ -84,10 +84,15 @@ h1{
 .infospot{
     border-radius: black;
     background-color: white;
-    max-width: 300px;
+    max-width: 30rem;
     color: black;
-    padding: 15px;
-    overflow: hidden;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.infospot p{
+    
 }
 
 .infospot .title {

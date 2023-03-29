@@ -3,9 +3,10 @@
 var infospot, infospot2;
 const vrbutton = document.getElementsByClassName("vr-button");
 
-infospot = new PANOLENS.Infospot();
-infospot.position.set( 300, 450, -450);
-infospot.addHoverText( 'Tim zijn prachtige voorhoofd' );
+
+infospot = new PANOLENS.Infospot(300, PANOLENS.DataImage.Info);
+infospot.position.set( 0, 0, 3000);
+infospot.addHoverElement( document.getElementById( 'infospot-2' ), 100 );
 
 infospot2 = new PANOLENS.Infospot( 300, PANOLENS.DataImage.Info );
 infospot2.position.set( -5000.00, -1825.25, 197.56 );
@@ -52,14 +53,20 @@ panorama6.link( panorama5, new THREE.Vector3( -5000, 100, -1000 ), 900,);
 var vrtoggled = false;
 
 
+
+
 //toggle on/off vr mode
 function vrtoggle(){
     
     if(vrtoggled === false){
-        viewer.enableEffect(PANOLENS.MODES.CARDBOARD)
+        viewer.enableEffect(PANOLENS.MODES.CARDBOARD);// enable varboard mode (phone)
+        if(viewer.isMobile){
+            viewer.enableControl(PANOLENS.CONTROLS.DEVICEORIENTATION); // enable device orientation
+        }
         vrtoggled = true;
     } else{
-        viewer.disableEffect()
+        viewer.disableEffect();
+        viewer.disableControl();
         vrtoggled = false;
     }
 }
@@ -69,6 +76,8 @@ viewer.add(panorama, panorama2, panorama3, panorama4, panorama5, panorama6);
 panorama.add( infospot );
 panorama.add( infospot2 );
 
+
+//scene 
 for (let index = 0; index < viewer.scene.children.length; index++) {
     switch (index) {
         case 0:
