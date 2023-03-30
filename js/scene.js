@@ -1,7 +1,13 @@
-const achievementOne = document.getElementById('achievement--1');
-const achievementTwo = document.getElementById('achievement--2');
+const achievementOne = document.getElementById('achievement--0');
+const achievementTwo = document.getElementById('achievement--1');
 const unlockedAchievement = document.getElementById('unlocked--achievement');
-const unlockedAchievementTitle = document.getElementById('unlocked--achievement--title');
+const unlockedAchievementTitle = document.getElementById(
+    'unlocked--achievement--title'
+);
+const achievementsText = document.getElementById('achievements--text');
+const achievementsEl = document.getElementById('achievements');
+const achievementButton = document.getElementById('achievement--button');
+const achievementsList = document.getElementById('achievements--list');
 
 const myInfoSpot1 = document.getElementById('infospot--1');
 
@@ -31,7 +37,7 @@ const panorama4 = new PANOLENS.ImagePanorama(img4);
 const panorama5 = new PANOLENS.ImagePanorama(img5);
 const panorama6 = new PANOLENS.ImagePanorama(img6);
 const viewer = new PANOLENS.Viewer({
-    container: pan,
+    container: pan
 });
 
 //linking between panorama's
@@ -64,14 +70,79 @@ function vrtoggle() {
 
 vrbutton.addEventListener('click', vrtoggle);
 
+// Achievements --> idea to create an api for the achievements and rest of the data?
+const myAchievementOne = {
+    title: 'Prestatie 1',
+    description: 'Voltooi de experience.',
+    unlocked: false
+};
+
+const myAchievementTwo = {
+    title: 'Prestatie 2',
+    description: 'Bezoek de kantine.',
+    unlocked: false
+};
+
+const myAchievementThree = {
+    title: 'Prestatie 3',
+    description: 'Lees het stukje intro tekst.',
+    unlocked: false
+};
+
+const myAchievements = [myAchievementOne, myAchievementTwo, myAchievementThree];
+
+const renderAchievementsList = () => {
+    myAchievements.forEach((achievement, i) => {
+        const achievementsListElement = document.createElement('li');
+        const achievementsListElementTitle = document.createElement('h3');
+        const achievementsListElementDescription = document.createElement('p');
+
+        achievementsListElement.classList.add('achievements__achievement');
+        achievementsListElement.id = `achievement--${i}`;
+
+        achievementsListElementTitle.classList.add(
+            'achievements__achievement__title'
+        );
+        achievementsListElementTitle.textContent = achievement.title;
+        achievementsListElementDescription.textContent =
+            achievement.description;
+
+        achievementsListElementDescription.classList.add(
+            'achievements__achievement__text'
+        );
+
+        achievementsList.appendChild(achievementsListElement);
+        achievementsListElement.appendChild(achievementsListElementTitle);
+        achievementsListElement.appendChild(achievementsListElementDescription);
+    });
+};
+
+renderAchievementsList();
+
+const allAchievementsUnlocked = () => {
+    myAchievements.forEach((achievement) => {
+        if (achievement.unlocked == true) {
+            achievementsText.textContent =
+                'Gefeliciteerd! Je hebt alle prestaties ontgrendeld!';
+        }
+    });
+};
+
+achievementButton.addEventListener('click', () => {
+    achievementsEl.classList.toggle('achievements--open');
+    allAchievementsUnlocked();
+});
+
+// Panoramas
 const panoramas = [
     'panorama 1',
     'panorama 2',
     'panorama 3',
     'panorama 4',
     'panorama 5',
-    'panorama 6',
+    'panorama 6'
 ];
+
 const visitedPanoramas = [];
 
 panorama.addEventListener('click', () => {
