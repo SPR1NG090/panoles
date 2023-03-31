@@ -1,3 +1,4 @@
+// stopwatch
 const startButton = document.querySelector('#startButton');
 const startScherm = document.querySelector('#startScherm');
 
@@ -38,8 +39,7 @@ function stopStopwatch() {
     console.log("hello");
 }
 
-
-stopButton.addEventListener('click', () => {
+stopbutton.addEventListener('click', () => {
     stopStopwatch();
 })
 
