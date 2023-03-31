@@ -1,3 +1,24 @@
+// random volgorde bepalen
+// localStorage.clear();
+var stimuli = [0, 0, 0, 0, 0, 1, 1, 1, 1, 1];
+if (localStorage.getItem('volgorde')=== null){
+    stimuli.sort (function (a, b) { return 0.5 - Math.random ( ); } );
+    console.log(stimuli);
+    localStorage.setItem('volgorde', JSON.stringify(stimuli));
+    console.log(localStorage.getItem('volgorde'));
+    localStorage.setItem('runNummer', 0);
+}
+else {
+    console.log(localStorage.getItem('volgorde'));
+    let run = localStorage.getItem('runNummer');
+    run++;
+    localStorage.setItem('runNummer', run);
+}
+
+var volgorde = JSON.parse(localStorage.getItem('volgorde'));
+var runNummer = parseInt(localStorage.getItem('runNummer'));
+console.log(runNummer)
+console.log(volgorde[runNummer]);
 
 //infospots
 var infospot, infospot2;
@@ -32,9 +53,21 @@ const panorama3 = new PANOLENS.ImagePanorama(img3);
 const panorama4 = new PANOLENS.ImagePanorama(img4);
 const panorama5 = new PANOLENS.ImagePanorama(img5);
 const panorama6 = new PANOLENS.ImagePanorama(img6);
-const viewer = new PANOLENS.Viewer({
-    container: pan, output: 'console',
-})
+var viewer;
+if (volgorde[runNummer] === 0){
+    viewer = new PANOLENS.Viewer({
+        container: pan, output: 'console', enableReticle: true,
+    })
+    console.log('met reticle');
+}
+else {
+    viewer = new PANOLENS.Viewer({
+        container: pan, output: 'console',
+    })
+    console.log('zonder reticle');
+}
+
+
 
 //linking between panorama's
 panorama.link( panorama2, new THREE.Vector3( 5000, 200, -400 ), 900,);
@@ -103,4 +136,52 @@ this.setInterval(() => {
     }
 }, 1000);
  
+const startButton = document.querySelector('#startButton');
+const startScherm = document.querySelector('#startScherm');
 
+const stopwatch = { elapsedTime: 0 };
+var milliseconds = 0;
+var seconds = 0;
+var minutes = 0;
+var hour = 0;
+let stop = false;
+
+startButton.addEventListener('click', () => {
+    startStopwatch();
+    startScherm.classList.add("hidden");
+  })
+
+function startStopwatch() {
+    if (stop == true) {
+      return;
+    }
+    else {
+      //reset start time
+      stopwatch.startTime = Date.now();
+      // run `setInterval()` and save the ID
+      stopwatch.intervalId = setInterval(() => {
+        //calculate elapsed time
+        const elapsedTime = Date.now() - stopwatch.startTime + stopwatch.elapsedTime
+        //calculate different time measurements based on elapsed time
+        milliseconds = parseInt((elapsedTime%1000)/10)
+        seconds = parseInt((elapsedTime/1000)%60)
+        minutes = parseInt((elapsedTime/(1000*60))%60)
+        hour = parseInt((elapsedTime/(1000*60*60))%24);
+        }, 100);
+      }
+  }
+
+function stopStopwatch() {
+    console.log(hour, minutes, seconds, milliseconds);
+    for (let index = 0; index < viewer.scene.children.length; index++) {
+        if (viewer.scene.children[index].active === true) {
+            console.log ("Locatie: " + viewer.scene.children[index].name);
+        }
+    }
+}
+
+panorama.addEventListener('click', () => {
+    
+    stopStopwatch();
+}
+)
