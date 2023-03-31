@@ -102,22 +102,24 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row-reverse;
+    /* flex-direction: row-reverse; */
 }
 
 .header__buttons {
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex-basis: 70%;
+    justify-content: flex-end;
 }
 
 .header__title {
     display: flex;
-    justify-content: flex-end;
+    /* justify-content: flex-start; */
     font-size: 2rem;
     color: #ffa500;
     padding: 1rem;
-    flex-basis: 75%;
+    flex-basis: 70%;
 }
 
 .button {
@@ -127,6 +129,11 @@ body {
     background-color: #45bccb;
     color: #fff;
     font-size: 1rem;
+    max-width: 3rem;
+    max-height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button:hover {
@@ -147,9 +154,11 @@ body {
     padding-bottom: 0.75rem;
 }
 
-.footer__container {
-    max-width: 36rem;
+.progress__container {
+    width: 100%;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
 
 .progress {
@@ -157,6 +166,9 @@ body {
     border-radius: 1rem;
     padding: 0.25rem;
     height: 2rem;
+    width: 100%;
+    flex-basis: 70%;
+    
 }
 
 .progress__bar {
@@ -165,6 +177,7 @@ body {
     text-align: center;
     transition: all 0.2s ease-in-out;
     height: 100%;
+    
 }
 
 /* Infospot Styling Rules */
