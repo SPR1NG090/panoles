@@ -33,7 +33,7 @@ const panorama4 = new PANOLENS.ImagePanorama(img4);
 const panorama5 = new PANOLENS.ImagePanorama(img5);
 const panorama6 = new PANOLENS.ImagePanorama(img6);
 const viewer = new PANOLENS.Viewer({
-    container: pan, outpus: 'console'
+    container: pan, output: 'console',
 })
 
 //linking between panorama's
