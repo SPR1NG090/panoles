@@ -270,7 +270,7 @@ body {
 /* Achievements Styling Rules */
 .achievements {
     opacity: 0;
-    display: block;
+    display: none;
     width: 36rem;
     position: absolute;
     top: 50%;
@@ -285,6 +285,7 @@ body {
 
 .achievements--open {
     opacity: 1;
+    display: block;
     user-select: all;
 }
 

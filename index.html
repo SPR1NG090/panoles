@@ -7,8 +7,27 @@
         <link rel="stylesheet" href="css/style.css" />
         <title>Panoles test</title>
     </head>
-    
         <body>
+            <section class="achievements" id="achievements">
+                <h2 class="achievements__title">Prestaties</h2>
+                <p class="achievements__text">Hieronder staat een lijst met prestaties.</p>
+                <ul class="achievements__list">
+                    <li class="achievements__achievement" id="achievement--1">
+                        <h3 class="achievements__achievement__title">Prestatie 1</h3>
+                        <p class="achievements__achievement__text">Voltooi de experience.</p>
+                    </li>
+                    <li class="achievements__achievement" id="achievement--2">
+                        <h3 class="achievements__achievement__title">Prestatie 2</h3>
+                        <p class="achievements__achievement__text">Bezoek de kantine.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <article class="achievement" id="unlocked--achievement">
+                <h3 class="achievement__title" id="unlocked--achievement--title">
+                    Prestatie ... vrijgespeeld!
+                </h3>
+            </article>
             <main class="pan">
             <header class="header">
                 <div class="header__container">
@@ -38,39 +57,18 @@
                 </p>
             </article>
 
-            <section class="achievements" id="achievements">
-                <h2 class="achievements__title">Prestaties</h2>
-                <p class="achievements__text">Hieronder staat een lijst met prestaties.</p>
-                <ul class="achievements__list">
-                    <li class="achievements__achievement" id="achievement--1">
-                        <h3 class="achievements__achievement__title">Prestatie 1</h3>
-                        <p class="achievements__achievement__text">Voltooi de experience.</p>
-                    </li>
-                    <li class="achievements__achievement" id="achievement--2">
-                        <h3 class="achievements__achievement__title">Prestatie 2</h3>
-                        <p class="achievements__achievement__text">Bezoek de kantine.</p>
-                    </li>
-                </ul>
-            </section>
 
-            <article class="achievement" id="unlocked--achievement">
-                <h3 class="achievement__title" id="unlocked--achievement--title">
-                    Prestatie ... vrijgespeeld!
-                </h3>
-            </article>
-        
-
-                <div class ="bottomBar">
-                    
-                    <div class = "progressBar">
-                        <h2 class="footerTitle">u bevind zich:</h2>
-                        <h2 id="place">Buiten</h2>
-                        <div class="locatieInformatie">
-                            <button class="infoBtn">?</button>
-                            <div class="informatie"><p id="informatie"></p></div>
-                        </div>
+            <div class ="bottomBar">
+                
+                <div class = "progressBar">
+                    <h2 class="footerTitle">u bevind zich:</h2>
+                    <h2 id="place">Buiten</h2>
+                    <div class="locatieInformatie">
+                        <button class="infoBtn">?</button>
+                        <div class="informatie"><p id="informatie"></p></div>
                     </div>
-                </div> 
+                </div>
+            </div> 
     
 
             <script src="js/three.min.js"></script>
@@ -79,4 +77,5 @@
             <script src="js/main.js"></script>
         </main>
     </body>
+    
 </html>
