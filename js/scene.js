@@ -1,3 +1,4 @@
+
 const achievementOne = document.getElementById('achievement--1');
 const achievementTwo = document.getElementById('achievement--2');
 const unlockedAchievement = document.getElementById('unlocked--achievement');
@@ -12,6 +13,8 @@ infoSpot1.addHoverElement(myInfoSpot1, 150);
 const vrbutton = document.getElementById('vr-button');
 
 var place = document.getElementById('place');
+const locationInfo = document.getElementById("informatie");
+const information = ["dit is buiten voor de hoofdingang", "dit is waar je binnenkomt via de hoofdingang, Links zit de kantine", "Hier zit het Café waar je wat drinken kan bestellen", "Dit is de grote hal van de nieuwbouw", "dit is een studieruimte", "hier zitten de lokalen van de opleiding informatica"]
 //panolens select container
 
 //init externat constances
@@ -136,3 +139,40 @@ panorama.add(infoSpot1);
 viewer.add(panorama, panorama2, panorama3, panorama4, panorama5, panorama6);
 
 console.log(viewer);
+
+//navigation indexing
+for (let index = 0; index < viewer.scene.children.length; index++) {
+    switch (index) {
+        case 0:
+            viewer.scene.children[index].name = "Buiten";
+            break;
+        case 1:
+            viewer.scene.children[index].name = "Hoofdingang";
+            break;
+        case 2:
+            viewer.scene.children[index].name = "Café";
+            break;
+        case 3:
+            viewer.scene.children[index].name = "Hal";
+            break;
+        case 4:
+            viewer.scene.children[index].name = "Studie ruimte";
+            break;
+        case 5:
+            viewer.scene.children[index].name = "Lokalen";
+            break;
+        default:
+            break;
+    }
+}
+this.setInterval(() => {
+    for (let index = 0; index < viewer.scene.children.length; index++) {
+        if (viewer.scene.children[index].active === true) {
+            place.innerHTML = viewer.scene.children[index].name;
+            locationInfo.innerHTML = information[index];
+            // console.log (viewer.scene.children[index].name);
+        }
+    }
+}, 1000);
+
+
