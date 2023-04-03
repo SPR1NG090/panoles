@@ -175,4 +175,12 @@ this.setInterval(() => {
     }
 }, 1000);
 
+const startButton = document.querySelector('#startButton');
+const startScherm = document.querySelector('#startScherm');
+
+
+startButton.addEventListener('click', () => {
+    startScherm.classList.add("hidden");
+  })
+
 
