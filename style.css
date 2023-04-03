@@ -8,7 +8,7 @@ body{
     overflow: hidden;
 }
 
-.startScherm{
+.startScherm, .stopScherm{
     width: 100%;
     height: 100%;
     position: absolute;
@@ -17,7 +17,6 @@ body{
     z-index: 99;
     top: 0;
 }
-
 .hidden {
     display: none;
 }
@@ -31,6 +30,15 @@ body{
     color: white;
     padding: 10px 15px;
     opacity: 1;
+}
+
+.eindTijd{
+    position: fixed;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
 }
 
 .topBar, .bottomBar{
@@ -88,6 +96,7 @@ h1{
     color: black;
     padding: 15px;
     overflow: hidden;
+    margin-bottom: 30px;
 }
 
 .infospot .title {

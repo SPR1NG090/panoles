@@ -1,5 +1,5 @@
 // random volgorde bepalen
-// localStorage.clear();
+localStorage.clear();
 var stimuli = [0, 0, 0, 0, 0, 1, 1, 1, 1, 1];
 if (localStorage.getItem('volgorde')=== null){
     stimuli.sort (function (a, b) { return 0.5 - Math.random ( ); } );
@@ -25,12 +25,11 @@ var infospot, infospot2;
 const vrbutton = document.getElementsByClassName("vr-button");
 
 infospot = new PANOLENS.Infospot();
-infospot.position.set( 300, 450, -450);
-infospot.addHoverText( 'Tim zijn prachtige voorhoofd' );
+infospot.position.set( 400, 100, -3000);
+infospot.addHoverElement( document.getElementById( 'infospot-1' ), 100 );
 
-infospot2 = new PANOLENS.Infospot( 300, PANOLENS.DataImage.Info );
-infospot2.position.set( -5000.00, -1825.25, 197.56 );
-infospot2.addHoverElement( document.getElementById( 'infospot-1' ), 100 );
+infospot2 = new PANOLENS.Infospot();
+infospot2.position.set( 400, 100, -3000);
 
 var place = document.getElementById('place');
 const information = ["dit is buiten voor de hoofdingang", "dit is waar je binnenkomt via de hoofdingang, Links zit de kantine", "Hier zit het Café waar je wat drinken kan bestellen", "Dit is de grote hal van de nieuwbouw", "dit is een studieruimte", "hier zitten de lokalen van de opleiding informatica"]
@@ -100,7 +99,7 @@ function vrtoggle(){
 //adding to objects
 viewer.add(panorama, panorama2, panorama3, panorama4, panorama5, panorama6);
 panorama.add( infospot );
-panorama.add( infospot2 );
+panorama6.add( infospot2 );
 
 for (let index = 0; index < viewer.scene.children.length; index++) {
     switch (index) {
@@ -138,6 +137,8 @@ this.setInterval(() => {
  
 const startButton = document.querySelector('#startButton');
 const startScherm = document.querySelector('#startScherm');
+const stopScherm = document.querySelector('#stopScherm');
+var eindTijd = document.querySelector('#eindTijd');
 
 const stopwatch = { elapsedTime: 0 };
 var milliseconds = 0;
@@ -180,7 +181,44 @@ function stopStopwatch() {
     }
 }
 
+infospot2.addEventListener('click', () => {
+    stopScherm.classList.remove("hidden");
+    console.log(hour, minutes, seconds, milliseconds);
+    eindTijd.innerHTML = hour + ":" + minutes + ":" + seconds + ":" + milliseconds;
+    
+}
+)
 panorama.addEventListener('click', () => {
+    
+    stopStopwatch();
+}
+)
+
+panorama2.addEventListener('click', () => {
+    
+    stopStopwatch();
+}
+)
+
+panorama3.addEventListener('click', () => {
+    
+    stopStopwatch();
+}
+)
+
+panorama4.addEventListener('click', () => {
+    
+    stopStopwatch();
+}
+)
+
+panorama5.addEventListener('click', () => {
+    
+    stopStopwatch();
+}
+)
+
+panorama6.addEventListener('click', () => {
     
     stopStopwatch();
 }
