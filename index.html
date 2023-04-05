@@ -4,58 +4,68 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+            rel="stylesheet"
+        />
         <link rel="stylesheet" href="css/style.css" />
         <title>Panoles test</title>
     </head>
-        <body>
-            <!-- startscherm -->
-            <div class="startScherm" id="startScherm">
-                <button id="startButton" class="startButton">Start!</button>
-                <div class="startIntructions">
-                    <h3 class="startTitle">Rondkijken:</h3>
-                    <p class="startTekst">klik en sleep de muis om de camera te draaien en rond te kijken.</p>
-                    <div class="startImage"></div>
-                </div>
-                <div class="startFooter">
-                    <h3 class="startFooterTekst">Hieronder is te vinden waar in de omgeving u zich nu bevind</h3>
-                    <img class="startFooterImage" src="img/img1.png" alt="">
-                </div>
-                <div class="startSettings">
-                    <h3 class="startFooterTekst">Instellingen</h3>
-                    <h3> Fullscreen</h3>
-                    <img class="startSettingsImage" src="img/img1.png" alt="">
-                </div>
-
-                <div class="startOptions">
-                    <img class="startOptionsImage" src="img/img1.png" alt="">
-                    <h3> VR modus</h3>
-                    <h3> Prestaties</h3>
-                </div>
+    <body>
+        <!-- startscherm -->
+        <div class="startScherm" id="startScherm">
+            <button id="startButton" class="startButton">Start!</button>
+            <div class="startIntructions">
+                <h3 class="startTitle">Rondkijken:</h3>
+                <p class="startTekst">
+                    klik en sleep de muis om de camera te draaien en rond te kijken.
+                </p>
+                <div class="startImage"></div>
+            </div>
+            <div class="startFooter">
+                <h3 class="startFooterTekst">
+                    Hieronder is te vinden waar in de omgeving u zich nu bevind
+                </h3>
+                <img class="startFooterImage" src="img/img1.png" alt="" />
+            </div>
+            <div class="startSettings">
+                <h3 class="startFooterTekst">Instellingen</h3>
+                <h3>Fullscreen</h3>
+                <img class="startSettingsImage" src="img/img1.png" alt="" />
             </div>
 
-            <!-- achievements -->
-            <section class="achievements" id="achievements">
-                <h2 class="achievements__title">Prestaties</h2>
-                <p class="achievements__text">Hieronder staat een lijst met prestaties.</p>
-                <ul class="achievements__list">
-                    <li class="achievements__achievement" id="achievement--1">
-                        <h3 class="achievements__achievement__title">Prestatie 1</h3>
-                        <p class="achievements__achievement__text">Voltooi de experience.</p>
-                    </li>
-                    <li class="achievements__achievement" id="achievement--2">
-                        <h3 class="achievements__achievement__title">Prestatie 2</h3>
-                        <p class="achievements__achievement__text">Bezoek de kantine.</p>
-                    </li>
-                </ul>
-            </section>
+            <div class="startOptions">
+                <img class="startOptionsImage" src="img/img1.png" alt="" />
+                <h3>VR modus</h3>
+                <h3>Prestaties</h3>
+            </div>
+        </div>
 
-            <article class="achievement" id="unlocked--achievement">
-                <h3 class="achievement__title" id="unlocked--achievement--title">
-                    Prestatie ... vrijgespeeld!
-                </h3>
-            </article>
-            <!-- main panorama -->
-            <main class="pan">
+        <!-- achievements -->
+        <section class="achievements" id="achievements">
+            <h2 class="achievements__title">Prestaties</h2>
+            <p class="achievements__text">Hieronder staat een lijst met prestaties.</p>
+            <ul class="achievements__list">
+                <li class="achievements__achievement" id="achievement--1">
+                    <h3 class="achievements__achievement__title">Prestatie 1</h3>
+                    <p class="achievements__achievement__text">Voltooi de experience.</p>
+                </li>
+                <li class="achievements__achievement" id="achievement--2">
+                    <h3 class="achievements__achievement__title">Prestatie 2</h3>
+                    <p class="achievements__achievement__text">Bezoek de kantine.</p>
+                </li>
+            </ul>
+        </section>
+
+        <article class="achievement" id="unlocked--achievement">
+            <h3 class="achievement__title" id="unlocked--achievement--title">
+                Prestatie ... vrijgespeeld!
+            </h3>
+        </article>
+        <!-- main panorama -->
+        <main class="pan">
             <header class="header">
                 <div class="header__container">
                     <h1 class="header__title">Beroepsorientatie 360</h1>
@@ -65,8 +75,7 @@
                             <div id="progress--bar" class="progress__bar"></div>
                         </div>
                     </div>
-                    
-                    
+
                     <div class="header__buttons">
                         <button id="vr-button" class="button">VR</button>
                         <button class="button" id="achievement--button">
@@ -86,9 +95,8 @@
             </article>
 
             <!-- footer -->
-            <div class ="bottomBar">
-                
-                <div class = "progressBar">
+            <div class="bottomBar">
+                <div class="progressBar">
                     <h2 class="footerTitle">u bevind zich:</h2>
                     <h2 id="place">Buiten</h2>
                     <div class="locatieInformatie">
@@ -96,8 +104,8 @@
                         <div class="informatie"><p id="informatie"></p></div>
                     </div>
                 </div>
-            </div> 
-    
+            </div>
+
             <!-- scripts -->
             <script src="js/three.min.js"></script>
             <script src="js/panolens.min.js"></script>
@@ -105,5 +113,4 @@
             <script src="js/main.js"></script>
         </main>
     </body>
-    
 </html>
