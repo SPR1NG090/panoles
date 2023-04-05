@@ -21,6 +21,46 @@ body {
     display: none;
 }
 
+.startIntructions{
+    position: absolute;
+    margin: 0;
+    top: 10%;
+    width: 50rem;
+    transform: translatex(70%);
+    height: 20rem;
+    background-color:rgba(255, 255, 255, 0.9);
+    border-radius: 2rem;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+.startImage{
+    display: block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: url(/img/generic-mouse.png) no-repeat;
+    width: 5rem; /* Width of new image */
+    height: 5rem; /* Height of new image */
+    margin-left: 2rem;
+    animation-name: mousemove, mousemovey;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    
+}
+
+.startTitle{
+    font-size: 2rem;
+}
+
+.startTekst{
+    font-size: 1.3rem;
+    
+}
+
 .startButton{
     position: fixed;
     left: 50%;
@@ -34,6 +74,81 @@ body {
     width: 10rem;
     height: 5rem;
     font-size: 2rem;
+    border-radius: 2rem;
+}
+
+.startFooter{
+    position: absolute;
+    margin: 0;
+    bottom: 8%;
+    width: 40rem;
+    transform: translatex(100%);
+    height: 8rem;
+    background-color:rgba(255, 255, 255, 0.9);
+    border-radius: 2rem;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.8;
+
+}
+
+.startFooterImage{
+    max-width: 3rem;
+    max-height: 3rem;
+    transform: rotate(180deg);
+}
+
+.startFooterTekst{
+    font-size: 1.2rem;
+}
+
+.startSettings{
+    position: absolute;
+    margin: 0;
+    bottom: 5%;
+    right: 0;
+    width: 10rem;
+    height: 8rem;
+    background-color:rgba(255, 255, 255, 0.9);
+    border-radius: 2rem;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.8;
+}
+
+.startSettingsImage{
+    max-width: 3rem;
+    max-height: 3rem;
+    transform: rotate(145deg);
+}
+
+.startOptions{
+    position: absolute;
+    margin: 0;
+    top: 8%;
+    right: 0;
+    width: 10rem;
+    height: 8rem;
+    background-color:rgba(255, 255, 255, 0.9);
+    border-radius: 2rem;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.8;
+}
+
+.startOptionsImage{
+    max-width: 3rem;
+    max-height: 3rem;
+    transform: rotate(20deg);
 }
 
 .topBar,
@@ -374,4 +489,13 @@ body {
 .achievement__title {
     text-align: center;
     padding: 1rem 0;
+}
+
+@keyframes mousemove{
+    0% {margin-right: 0; background: url(/img/mouse-left-click.png) no-repeat ;}
+    30%{ margin-right: 12rem;}
+    60% {margin-right: -12rem;}
+    80%{ background: url(/img/mouse-left-click.png) no-repeat;}
+    100% {margin-right: 0; }
+ 
 }
