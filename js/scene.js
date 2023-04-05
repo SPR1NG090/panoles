@@ -1,13 +1,12 @@
-const achievementOne = document.getElementById('achievement--0');
-const achievementTwo = document.getElementById('achievement--1');
 const unlockedAchievement = document.getElementById('unlocked--achievement');
-const unlockedAchievementTitle = document.getElementById(
-    'unlocked--achievement--title'
-);
+const unlockedAchievementTitle = document.getElementById('unlocked--achievement--title');
 const achievementsText = document.getElementById('achievements--text');
 const achievementsEl = document.getElementById('achievements');
 const achievementButton = document.getElementById('achievement--button');
 const achievementsList = document.getElementById('achievements--list');
+
+const pathToachievementUnlockedAudio = '../audio/cartoon_cowbell.mp3';
+const achievementUnlockedAudio = new Audio(pathToachievementUnlockedAudio);
 
 const myInfoSpot1 = document.getElementById('infospot--1');
 
@@ -37,7 +36,7 @@ const panorama4 = new PANOLENS.ImagePanorama(img4);
 const panorama5 = new PANOLENS.ImagePanorama(img5);
 const panorama6 = new PANOLENS.ImagePanorama(img6);
 const viewer = new PANOLENS.Viewer({
-    container: pan
+    container: pan,
 });
 
 //linking between panorama's
@@ -74,19 +73,19 @@ vrbutton.addEventListener('click', vrtoggle);
 const myAchievementOne = {
     title: 'Prestatie 1',
     description: 'Voltooi de experience.',
-    unlocked: false
+    unlocked: false,
 };
 
 const myAchievementTwo = {
     title: 'Prestatie 2',
     description: 'Bezoek de kantine.',
-    unlocked: false
+    unlocked: false,
 };
 
 const myAchievementThree = {
     title: 'Prestatie 3',
     description: 'Lees het stukje intro tekst.',
-    unlocked: false
+    unlocked: false,
 };
 
 const myAchievements = [myAchievementOne, myAchievementTwo, myAchievementThree];
@@ -100,16 +99,11 @@ const renderAchievementsList = () => {
         achievementsListElement.classList.add('achievements__achievement');
         achievementsListElement.id = `achievement--${i}`;
 
-        achievementsListElementTitle.classList.add(
-            'achievements__achievement__title'
-        );
+        achievementsListElementTitle.classList.add('achievements__achievement__title');
         achievementsListElementTitle.textContent = achievement.title;
-        achievementsListElementDescription.textContent =
-            achievement.description;
+        achievementsListElementDescription.textContent = achievement.description;
 
-        achievementsListElementDescription.classList.add(
-            'achievements__achievement__text'
-        );
+        achievementsListElementDescription.classList.add('achievements__achievement__text');
 
         achievementsList.appendChild(achievementsListElement);
         achievementsListElement.appendChild(achievementsListElementTitle);
@@ -119,11 +113,14 @@ const renderAchievementsList = () => {
 
 renderAchievementsList();
 
+const achievementOne = document.getElementById('achievement--0');
+const achievementTwo = document.getElementById('achievement--1');
+const achievementThree = document.getElementById('achievement--2');
+
 const allAchievementsUnlocked = () => {
     myAchievements.forEach((achievement) => {
         if (achievement.unlocked == true) {
-            achievementsText.textContent =
-                'Gefeliciteerd! Je hebt alle prestaties ontgrendeld!';
+            achievementsText.textContent = 'Gefeliciteerd! Je hebt alle prestaties ontgrendeld!';
         }
     });
 };
@@ -140,7 +137,7 @@ const panoramas = [
     'panorama 3',
     'panorama 4',
     'panorama 5',
-    'panorama 6'
+    'panorama 6',
 ];
 
 const visitedPanoramas = [];
@@ -160,15 +157,20 @@ panorama2.addEventListener('click', () => {
 panorama3.addEventListener('click', () => {
     const date = new Date();
     console.log(`[${date.toLocaleString()}]: click event panorama 3`);
-
-    unlockedAchievementTitle.textContent = 'Prestatie 2 ontgrendeld!';
-    unlockedAchievement.classList.add('achievement--unlocked');
-    setTimeout(() => {
-        unlockedAchievement.classList.remove('achievement--unlocked');
-    }, 3000);
-
-    achievementTwo.classList.add('achievements__achievement--unlocked');
     visitedPanoramas.push('panorama 3');
+
+    if (!achievementTwo.classList.contains('achievements__achievement--unlocked')) {
+        unlockedAchievementTitle.textContent = 'Prestatie 2 ontgrendeld!';
+        unlockedAchievement.classList.add('achievement--unlocked');
+        achievementUnlockedAudio.play();
+        setTimeout(() => {
+            unlockedAchievement.classList.remove('achievement--unlocked');
+        }, 3000);
+
+        achievementTwo.classList.add('achievements__achievement--unlocked');
+    } else {
+        return;
+    }
 });
 
 panorama4.addEventListener('click', () => {
@@ -188,17 +190,20 @@ panorama6.addEventListener('click', () => {
     console.log(`[${date.toLocaleString()}]: click even panorama 6`);
     visitedPanoramas.push('panorama 6');
 
-    visitedPanoramas.every((visitedPanorama) => {
-        if (panoramas.indexOf(visitedPanorama, -1)) {
-            unlockedAchievementTitle.textContent = 'Prestatie 1 ontgrendeld!';
-            unlockedAchievement.classList.add('achievement--unlocked');
-            setTimeout(() => {
-                unlockedAchievement.classList.remove('achievement--unlocked');
-            }, 3000);
+    if (!achievementOne.classList.contains('achievements__achievement--unlocked')) {
+        visitedPanoramas.every((visitedPanorama) => {
+            if (panoramas.indexOf(visitedPanorama, -1)) {
+                unlockedAchievementTitle.textContent = 'Prestatie 1 ontgrendeld!';
+                unlockedAchievement.classList.add('achievement--unlocked');
+                achievementUnlockedAudio.play();
+                setTimeout(() => {
+                    unlockedAchievement.classList.remove('achievement--unlocked');
+                }, 3000);
 
-            achievementOne.classList.add('achievements__achievement--unlocked');
-        }
-    });
+                achievementOne.classList.add('achievements__achievement--unlocked');
+            }
+        });
+    }
 });
 
 panorama.add(infoSpot1);
