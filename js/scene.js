@@ -124,7 +124,7 @@ for (let index = 0; index < viewer.scene.children.length; index++) {
             viewer.scene.children[index].name = 'Hoofdingang';
             break;
         case 2:
-            viewer.scene.children[index].name = 'Café';
+            viewer.scene.children[index].name = 'Kantine';
             break;
         case 3:
             viewer.scene.children[index].name = 'Hal';
