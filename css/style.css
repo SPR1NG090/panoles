@@ -5,10 +5,12 @@
 }
 
 body {
+    font-family: 'Open Sans', sans-serif;
     overflow: hidden;
 }
 
-.startScherm, .stopScherm{
+.startScherm,
+.stopScherm {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -21,14 +23,14 @@ body {
     display: none;
 }
 
-.startIntructions{
+.startIntructions {
     position: absolute;
     margin: 0;
     top: 10%;
     width: 50rem;
     transform: translatex(70%);
     height: 20rem;
-    background-color:rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 2rem;
     color: black;
     display: flex;
@@ -37,7 +39,7 @@ body {
     align-items: center;
 }
 
-.startImage{
+.startImage {
     display: block;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -49,19 +51,17 @@ body {
     animation-duration: 5s;
     animation-iteration-count: infinite;
     animation-delay: 1s;
-    
 }
 
-.startTitle{
+.startTitle {
     font-size: 2rem;
 }
 
-.startTekst{
+.startTekst {
     font-size: 1.3rem;
-    
 }
 
-.startButton{
+.startButton {
     position: fixed;
     left: 50%;
     top: 50%;
@@ -77,14 +77,14 @@ body {
     border-radius: 2rem;
 }
 
-.startFooter{
+.startFooter {
     position: absolute;
     margin: 0;
     bottom: 8%;
     width: 40rem;
     transform: translatex(100%);
     height: 8rem;
-    background-color:rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 2rem;
     color: black;
     display: flex;
@@ -92,27 +92,26 @@ body {
     flex-direction: column;
     align-items: center;
     opacity: 0.8;
-
 }
 
-.startFooterImage{
+.startFooterImage {
     max-width: 3rem;
     max-height: 3rem;
     transform: rotate(180deg);
 }
 
-.startFooterTekst{
+.startFooterTekst {
     font-size: 1.2rem;
 }
 
-.startSettings{
+.startSettings {
     position: absolute;
     margin: 0;
     bottom: 5%;
     right: 0;
     width: 10rem;
     height: 8rem;
-    background-color:rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 2rem;
     color: black;
     display: flex;
@@ -122,20 +121,20 @@ body {
     opacity: 0.8;
 }
 
-.startSettingsImage{
+.startSettingsImage {
     max-width: 3rem;
     max-height: 3rem;
     transform: rotate(145deg);
 }
 
-.startOptions{
+.startOptions {
     position: absolute;
     margin: 0;
     top: 8%;
     right: 0;
     width: 10rem;
     height: 8rem;
-    background-color:rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 2rem;
     color: black;
     display: flex;
@@ -145,7 +144,7 @@ body {
     opacity: 0.8;
 }
 
-.startOptionsImage{
+.startOptionsImage {
     max-width: 3rem;
     max-height: 3rem;
     transform: rotate(20deg);
@@ -166,7 +165,7 @@ body {
     bottom: 0;
 }
 
-#place{
+#place {
     margin-right: 5rem;
 }
 
@@ -179,7 +178,6 @@ body {
     text-align: center;
     display: flex;
     justify-content: space-between;
-    
 }
 
 /* h1 {
@@ -228,23 +226,23 @@ body {
 }
 
 /* panorama */
-.pan{
+.pan {
     width: 100vw;
     height: 100vh;
 }
 
-.menu, .locatieInformatie {
+.menu,
+.locatieInformatie {
     display: flex;
     margin-right: 20px;
-    
 }
 
 .locatieInformatie {
     margin-left: 25px;
     margin-right: 0;
-    
 }
-.menuBtn, .infoBtn{
+.menuBtn,
+.infoBtn {
     background-color: #45bccb;
     color: white;
     padding: 15px;
@@ -260,13 +258,12 @@ body {
     font-weight: 700;
 }
 
-.menuImg{
+.menuImg {
     display: block;
     max-width: 20px;
     height: 20px;
-    
 }
-.footerTitle{
+.footerTitle {
     color: orange;
 }
 
@@ -283,7 +280,7 @@ body {
     display: none;
     position: absolute;
     background-color: white;
-    box-shadow: 9px 11px 20px rgba(0,0,0,0.15);
+    box-shadow: 9px 11px 20px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     padding: 10px;
     width: 200px;
@@ -294,7 +291,8 @@ body {
     background-color: white;
 }
 
-.menu:hover .menuContent, .locatieInformatie:hover .informatie{
+.menu:hover .menuContent,
+.locatieInformatie:hover .informatie {
     display: block;
 }
 
@@ -383,7 +381,6 @@ body {
     height: 2rem;
     width: 100%;
     flex-basis: 70%;
-    
 }
 
 .progress__bar {
@@ -392,7 +389,6 @@ body {
     text-align: center;
     transition: all 0.2s ease-in-out;
     height: 100%;
-    
 }
 
 /* Infospot Styling Rules */
@@ -491,11 +487,21 @@ body {
     padding: 1rem 0;
 }
 
-@keyframes mousemove{
-    0% {margin-right: 0; background: url(/img/mouse-left-click.png) no-repeat ;}
-    30%{ margin-right: 12rem;}
-    60% {margin-right: -12rem;}
-    80%{ background: url(/img/mouse-left-click.png) no-repeat;}
-    100% {margin-right: 0; }
- 
+@keyframes mousemove {
+    0% {
+        margin-right: 0;
+        background: url(/img/mouse-left-click.png) no-repeat;
+    }
+    30% {
+        margin-right: 12rem;
+    }
+    60% {
+        margin-right: -12rem;
+    }
+    80% {
+        background: url(/img/mouse-left-click.png) no-repeat;
+    }
+    100% {
+        margin-right: 0;
+    }
 }
