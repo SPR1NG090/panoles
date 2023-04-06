@@ -1,9 +1,9 @@
 const inventory = document.getElementById('inventory');
 const inventoryButton = document.getElementById('inventory--button');
+const inventoryItems = [];
 
 const laptop = document.getElementById('laptop');
 const charger = document.getElementById('charger');
-const notepad = document.getElementById('notebook');
 
 const myInfoSpot1 = document.getElementById('infospot--1');
 const myInfoSpot2 = document.getElementById('infospot--2');
@@ -23,6 +23,7 @@ laptopInfospot.position.set(-1350, -750, 200);
 laptopInfospot.addHoverElement(myInfoSpot3, 150);
 laptopInfospot.addEventListener('click', () => {
     laptop.classList.add('inventory__img--found');
+    inventoryItems.push('laptop');
 });
 
 const chargerInfospot = new PANOLENS.Infospot();
@@ -30,10 +31,17 @@ chargerInfospot.position.set(-2000, -750, -1500);
 chargerInfospot.addHoverElement(myInfoSpot4, 150);
 chargerInfospot.addEventListener('click', () => {
     charger.classList.add('inventory__img--found');
+    inventoryItems.push('charger');
 });
 
 inventoryButton.addEventListener('click', () => {
     inventory.classList.toggle('inventory--open');
+
+    if (inventoryItems.includes('laptop') && inventoryItems.includes('charger')) {
+        const inventoryFinished = document.getElementById('inventory--finished');
+
+        inventoryFinished.style.display = 'block';
+    }
 });
 
 const vrbutton = document.getElementById('vr-button');
@@ -46,7 +54,7 @@ const information = [
     'Hier zit het Café waar je wat drinken kan bestellen',
     'Dit is de grote hal van de nieuwbouw',
     'Dit is een studieruimte',
-    'Hier zitten de lokalen van de opleiding informatica'
+    'Hier zitten de lokalen van de opleiding informatica',
 ];
 //panolens select container
 
@@ -67,7 +75,7 @@ const panorama4 = new PANOLENS.ImagePanorama(img4);
 const panorama5 = new PANOLENS.ImagePanorama(img5);
 const panorama6 = new PANOLENS.ImagePanorama(img6);
 const viewer = new PANOLENS.Viewer({
-    container: pan
+    container: pan,
 });
 
 var vrtoggled = false;
@@ -93,7 +101,7 @@ const panoramas = [
     'panorama 3',
     'panorama 4',
     'panorama 5',
-    'panorama 6'
+    'panorama 6',
 ];
 
 panorama.addEventListener('click', () => {
@@ -147,8 +155,7 @@ panorama3.add(laptopInfospot);
 panorama6.add(chargerInfospot);
 
 //adding to objects
-// viewer.add(panorama, panorama2, panorama3, panorama4, panorama5, panorama6);
-viewer.add(panorama6);
+viewer.add(panorama, panorama2, panorama3, panorama4, panorama5, panorama6);
 
 console.log(viewer);
 
