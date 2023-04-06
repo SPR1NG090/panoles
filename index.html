@@ -20,7 +20,8 @@
             <div class="startIntructions">
                 <h3 class="startTitle">Rondkijken:</h3>
                 <p class="startTekst">
-                    klik en sleep de muis om de camera te draaien en rond te kijken.
+                    klik en sleep de muis om de camera te draaien en rond te
+                    kijken.
                 </p>
                 <div class="startImage"></div>
             </div>
@@ -55,18 +56,74 @@
                     </div>
 
                     <div class="header__buttons">
+                        <button id="inventory--button" class="button">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="48"
+                                viewBox="0 96 960 960"
+                                width="48"
+                                fill="#fff"
+                            >
+                                <path
+                                    d="M300 770q12 0 21-9t9-21q0-12-9-21t-21-9q-12 0-21 9t-9 21q0 12 9 21t21 9Zm0-164q12 0 21-9t9-21q0-12-9-21t-21-9q-12 0-21 9t-9 21q0 12 9 21t21 9Zm0-164q12 0 21-9t9-21q0-12-9-21t-21-9q-12 0-21 9t-9 21q0 12 9 21t21 9Zm132 328h244v-60H432v60Zm0-164h244v-60H432v60Zm0-164h244v-60H432v60ZM180 936q-24 0-42-18t-18-42V276q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600V276H180v600Zm0-600v600-600Z"
+                                />
+                            </svg>
+                        </button>
                         <button id="vr-button" class="button">VR</button>
                     </div>
                 </div>
             </header>
 
+            <article class="inventory" id="inventory">
+                <h2 class="inventory__title">Inventaris</h2>
+                <div class="inventory__content">
+                    <img
+                        id="laptop"
+                        src="img/laptop.png"
+                        alt=""
+                        class="inventory__img"
+                    />
+                    <img
+                        id="charger"
+                        src="img/charger.png"
+                        alt=""
+                        class="inventory__img"
+                    />
+                    <img
+                        id="notepad"
+                        src="img/notebook.png"
+                        alt=""
+                        class="inventory__img"
+                    />
+                </div>
+            </article>
+
             <!-- infospots -->
             <article class="infospot" id="infospot--1" style="display: none">
                 <h2 class="infospot__title">Welkom!</h2>
                 <p class="infospot__content">
-                    Deze experience is bedoeld om mensen een indruk te geven van een school en een
-                    opleiding. Dit wordt gedaan met het gebruik van 360° camera- en videobeelden.
+                    Deze experience is bedoeld om mensen een indruk te geven van
+                    een school en een opleiding. Dit wordt gedaan met het
+                    gebruik van 360° camera- en videobeelden.
                 </p>
+            </article>
+            <article class="infospot" id="infospot--2" style="display: none">
+                <h2 class="infospot__title">Hallo daar!</h2>
+                <p class="infospot__content">
+                    Ik ben mijn schoolspullen kwijtgeraakt. Kun jij mij helpen
+                    om ze terug te vinden? Het gaat om: een laptop, oplader en
+                    notitieblok.
+                </p>
+            </article>
+            <article class="infospot" id="infospot--3" style="display: none">
+                <figure class="infospot__figure">
+                    <img src="img/laptop.png" alt="" class="infospot__img" />
+                </figure>
+            </article>
+            <article class="infospot" id="infospot--4" style="display: none">
+                <figure class="infospot__figure">
+                    <img src="img/charger.png" alt="" class="infospot__img" />
+                </figure>
             </article>
 
             <!-- footer -->

@@ -396,6 +396,7 @@ body {
     background-color: #fff;
     padding: 1rem;
     box-shadow: var(--subtle-shadow);
+    cursor: pointer;
 }
 
 .infospot__title {
@@ -404,6 +405,17 @@ body {
 
 .infospot__content {
     color: #45bccb;
+}
+
+.infospot__figure {
+    max-width: 10rem;
+    max-height: 10rem;
+}
+
+.infospot__img {
+    display: block;
+    max-width: 100%;
+    height: 100%;
 }
 
 /* Achievements Styling Rules */
@@ -485,6 +497,47 @@ body {
 .achievement__title {
     text-align: center;
     padding: 1rem 0;
+}
+
+/* Inventory Style Rules */
+.inventory {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -15%);
+    max-width: 38rem;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    opacity: 0;
+    display: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.inventory--open {
+    opacity: 1;
+    display: block;
+}
+
+.inventory__title {
+    margin-bottom: 2rem;
+}
+
+.inventory__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+}
+
+.inventory__img {
+    display: block;
+    max-width: 8rem;
+    height: 6rem;
+    padding: 1rem;
+}
+
+.inventory__img--found {
+    background-color: #45bccb;
 }
 
 @keyframes mousemove {
