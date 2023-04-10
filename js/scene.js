@@ -82,13 +82,7 @@ const myAchievementTwo = {
     unlocked: false,
 };
 
-const myAchievementThree = {
-    title: 'Prestatie 3',
-    description: 'Lees het stukje intro tekst.',
-    unlocked: false,
-};
-
-const myAchievements = [myAchievementOne, myAchievementTwo, myAchievementThree];
+const myAchievements = [myAchievementOne, myAchievementTwo];
 
 const renderAchievementsList = () => {
     myAchievements.forEach((achievement, i) => {
