@@ -1,15 +1,15 @@
 // random volgorde bepalen
-localStorage.clear();
+// localStorage.clear();
 var stimuli = [0, 0, 0, 0, 0, 1, 1, 1, 1, 1];
 if (localStorage.getItem('volgorde')=== null){
     stimuli.sort (function (a, b) { return 0.5 - Math.random ( ); } );
-    console.log(stimuli);
+    // console.log(stimuli);
     localStorage.setItem('volgorde', JSON.stringify(stimuli));
-    console.log(localStorage.getItem('volgorde'));
+    // console.log(localStorage.getItem('volgorde'));
     localStorage.setItem('runNummer', 0);
 }
 else {
-    console.log(localStorage.getItem('volgorde'));
+    // console.log(localStorage.getItem('volgorde'));
     let run = localStorage.getItem('runNummer');
     run++;
     localStorage.setItem('runNummer', run);
@@ -18,7 +18,7 @@ else {
 var volgorde = JSON.parse(localStorage.getItem('volgorde'));
 var runNummer = parseInt(localStorage.getItem('runNummer'));
 console.log(runNummer)
-console.log(volgorde[runNummer]);
+// console.log(volgorde[runNummer]);
 
 //infospots
 var infospot, infospot2;
@@ -57,13 +57,13 @@ if (volgorde[runNummer] === 0){
     viewer = new PANOLENS.Viewer({
         container: pan, output: 'console', enableReticle: true,
     })
-    console.log('met reticle');
+    console.log('met Cursor');
 }
 else {
     viewer = new PANOLENS.Viewer({
         container: pan, output: 'console',
     })
-    console.log('zonder reticle');
+    console.log('zonder Cursor');
 }
 
 
