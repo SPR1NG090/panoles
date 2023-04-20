@@ -1,5 +1,5 @@
 // random volgorde bepalen
-// localStorage.clear();
+localStorage.clear();
 var stimuli = [0, 0, 0, 0, 0, 1, 1, 1, 1, 1];
 if (localStorage.getItem('volgorde')=== null){
     stimuli.sort (function (a, b) { return 0.5 - Math.random ( ); } );
@@ -9,7 +9,6 @@ if (localStorage.getItem('volgorde')=== null){
     localStorage.setItem('runNummer', 0);
 }
 else {
-    // console.log(localStorage.getItem('volgorde'));
     let run = localStorage.getItem('runNummer');
     run++;
     localStorage.setItem('runNummer', run);
@@ -17,7 +16,7 @@ else {
 
 var volgorde = JSON.parse(localStorage.getItem('volgorde'));
 var runNummer = parseInt(localStorage.getItem('runNummer'));
-console.log(runNummer)
+console.log(runNummer);
 // console.log(volgorde[runNummer]);
 
 //infospots
@@ -53,6 +52,8 @@ const panorama4 = new PANOLENS.ImagePanorama(img4);
 const panorama5 = new PANOLENS.ImagePanorama(img5);
 const panorama6 = new PANOLENS.ImagePanorama(img6);
 var viewer;
+
+// bepaal welke interactievorm actief is 0 is met cursor 1 is zonder cursor
 if (volgorde[runNummer] === 0){
     viewer = new PANOLENS.Viewer({
         container: pan, output: 'console', enableReticle: true,
